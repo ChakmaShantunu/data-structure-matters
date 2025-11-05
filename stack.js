@@ -33,7 +33,8 @@ class Stack {
     }
 
     print() {
-        console.log(this.items);
+        // console.log(this.items.slice().reverse().join("->"));
+        console.log(this.items.map(item => typeof item === "object" ? JSON.stringify(item) : item).slice().reverse().join("->"));
     }
 };
 
@@ -41,7 +42,11 @@ const stack1 = new Stack();
 stack1.push(2);
 stack1.push(3);
 stack1.push(4);
-stack1.print();
-console.log(stack1.peek());
-console.log(stack1.pop());
+// stack1.print();
+stack1.push("shantunu");
+stack1.push({ name: 'supta' });
+stack1.push(true);
+stack1.push([10, 20, 30]);
+// console.log(stack1.peek());
+// console.log(stack1.pop());
 stack1.print();
